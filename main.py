@@ -10,6 +10,21 @@ def index():
         'message': 'Hello World'
     }), 400
 
+@app.route('/hello-world', methods=['GET', 'POST'])
+def index():
+    return jsonify({
+        'message': 'Hello World'
+    }), 400
+
+
+@app.errorhandler(404)
+def route_does_not_exist(error):
+    return jsonify({
+        'message': 'fucking route doesn\'t exit'
+    })
+
+
+
 app.register_blueprint(users_blueprint)
 
 
