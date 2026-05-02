@@ -11,7 +11,7 @@ def index():
     }), 400
 
 @app.route('/hello-world', methods=['GET', 'POST'])
-def index():
+def hello_world():
     return jsonify({
         'message': 'Hello World'
     }), 400
